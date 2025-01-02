@@ -11,6 +11,12 @@ bool isPrime(int number) {
     return true;
 }
 
+// Function to check if a number is a perfect square
+bool isPerfectSquare(int number) {
+    int root = sqrt(number);
+    return (root * root == number);
+}
+
 // Function to check primes in a range
 void checkPrimesInRange(int start, int end) {
     for (int i = start; i <= end; i++) {
@@ -34,6 +40,13 @@ int main() {
         cout << number << " is a prime number." << endl;
     } else {
         cout << number << " is not a prime number." << endl;
+    }
+
+    // Check if the number is a perfect square
+    if (isPerfectSquare(number)) {
+        cout << number << " is a perfect square." << endl;
+    } else {
+        cout << number << " is not a perfect square." << endl;
     }
 
     // Check primes in a range
