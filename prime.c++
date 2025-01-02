@@ -26,6 +26,11 @@ void checkPrimesInRange(int start, int end) {
     }
 }
 
+// Function to validate if the input is positive
+bool isValidInput(int number) {
+    return number > 0; // Only accept positive integers
+}
+
 int main() {
     int number;
 
@@ -36,6 +41,13 @@ int main() {
     cout << "Enter a number to check if it's prime: ";
     cin >> number;
 
+    // Input validation
+    if (!isValidInput(number)) {
+        cout << "Please enter a positive integer." << endl;
+        return 1; // Exit the program if input is invalid
+    }
+
+    // Check if the number is prime
     if (isPrime(number)) {
         cout << number << " is a prime number." << endl;
     } else {
